@@ -1,0 +1,11 @@
+{
+  "hostname": "test-device-1",
+  "ip_address": "192.168.100.101",
+  "vendor": "cisco",
+  "model": "2901",
+  "os_version": "15.2(4)M6",
+  "snmp_community": "public",
+  "snmp_port": 161,
+  "ssh_username": "admin",
+  "ssh_password": "password"
+}

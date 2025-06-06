@@ -1,0 +1,283 @@
+# ========================
+# 🔐 Segurança: Nuvem e chaves secretas
+# ========================
+
+# AWS
+**/.aws/
+**/credentials
+**/*aws-credentials*
+**/*.aws.json
+**/aws_keys.txt
+
+# Azure
+**/.azure/
+**/azure_credentials.*
+**/*.azureauth
+**/*.azure.json
+
+# Google Cloud / GCP
+**/.config/gcloud/
+**/*gcp*
+**/*.gcp.json
+**/*.gcloud.json
+
+# HashiCorp / Terraform / Vault
+**/.terraform/
+**/terraform.tfstate
+**/terraform.tfstate.*
+**/*.tfvars
+**/*.tfvars.json
+**/*.vault.json
+**/*.hcl
+
+# Heroku
+**/heroku.yml
+**/*.heroku.json
+**/*heroku-config*
+
+# Firebase
+**/*.firebase*
+**/.firebaserc
+**/firebase.json
+
+# Netlify / Vercel / Railway / Supabase / etc.
+**/.netlify/
+**/.vercel/
+**/vercel.json
+**/netlify.toml
+**/railway.json
+**/*.supabase.*
+
+# GitHub / GitLab / CI/CD secrets
+**/.github/credentials
+**/.github/workflows/secret*.yml
+**/.gitlab/secret*.yml
+**/.gitlab-ci.yml
+
+# Senhas e tokens genéricos
+**/*secret*
+**/*secrets*
+**/*token*
+**/*apikey*
+**/*api_key*
+**/*password*
+**/*.secret
+**/*.env.*
+**/secrets.yml
+**/*.enc
+
+# Arquivos pessoais e de autenticação
+**/id_rsa
+**/id_rsa.pub
+**/id_ed25519
+**/*.pem
+**/*.key
+**/*.crt
+**/*.cert
+**/*.csr
+**/*.pfx
+**/*.p12
+**/*.jks
+**/*.keystore
+
+# === Universal .gitignore ===
+
+# Sistemas Operacionais
+**/.DS_Store
+**/Thumbs.db
+**/ehthumbs.db
+**/Desktop.ini
+**/*~
+
+# Logs e arquivos temporários
+**/*.log
+**/*.tmp
+**/*.bak
+**/*.swp
+**/*.swo
+**/*.swn
+**/*.old
+**/*.orig
+**/*.rej
+
+# Arquivos sensíveis e ambientes
+**/.env
+**/.env.*
+**/*.pem
+**/*.key
+**/*.crt
+**/*.pfx
+**/*.cer
+**/*.der
+
+# Python
+**/__pycache__/
+**/*.py[cod]
+**/*.so
+**/*.egg
+**/*.egg-info/
+**/dist/
+**/build/
+**/.eggs/
+**/.mypy_cache/
+**/.pytest_cache/
+**/.nox/
+**/.tox/
+**/.coverage*
+**/htmlcov/
+**/.pytype/
+**/.pyre/
+**/.venv/
+**/env*/
+**/venv*/
+**/.pdm-python
+
+# Node.js
+**/node_modules/
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+**/pnpm-debug.log*
+**/package-lock.json
+**/yarn.lock
+**/.pnp.*
+**/.eslintcache
+
+# Java
+**/*.class
+**/*.jar
+**/*.war
+**/*.ear
+**/.classpath
+**/.project
+**/.settings/
+**/target/
+**/build/
+
+# C/C++
+**/*.o
+**/*.obj
+**/*.so
+**/*.dll
+**/*.exe
+**/*.out
+**/build/
+
+# Go
+**/bin/
+**/pkg/
+**/*.exe
+**/*.test
+
+# Rust
+**/target/
+**/Cargo.lock
+
+# .NET / C#
+**/bin/
+**/obj/
+**/*.user
+**/*.suo
+**/*.csproj.user
+**/*.sln.docstates
+
+# PHP / Composer
+**/vendor/
+**/composer.lock
+
+# Ruby / Bundler
+**/.bundle/
+**/vendor/
+**/Gemfile.lock
+
+# Swift / Xcode
+**/DerivedData/
+**/*.xcuserstate
+**/*.xcworkspace
+**/*.xcodeproj/
+**/build/
+
+# Flutter / Dart
+**/.dart_tool/
+**/.packages
+**/.pub/
+**/build/
+**/pubspec.lock
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+
+# Database
+**/*.sqlite
+**/*.sqlite3
+**/*.db
+**/*.db3
+**/*.sql
+
+# Docker
+**/*.pid
+**/docker-compose.override.yml
+
+# Firebase
+**/.firebase/
+**/.firebaserc
+
+# Jupyter / IPython
+**/.ipynb_checkpoints/
+**/profile_default/
+**/ipython_config.py
+
+# IDEs
+**/.vscode/
+**/.idea/
+**/*.iml
+**/.metadata/
+**/.project
+**/.classpath
+
+# Testes
+**/test-results/
+**/coverage/
+**/.coverage
+**/*.cover
+**/tests/__pycache__/
+
+# Configs locais e senhas
+**/*.local
+**/local_settings.py
+**/*.secrets.*
+**/secrets.*
+**/*.config.*
+**/*.cfg
+**/*.ini
+**/*.toml
+
+# Pacotes e artefatos
+**/*.zip
+**/*.tar.gz
+**/*.rar
+**/*.7z
+**/vendor/
+**/third_party/
+**/external/
+
+# Outros arquivos de lock
+**/Pipfile.lock
+**/poetry.lock
+**/Cargo.lock
+**/mix.lock
+**/bun.lockb
+**/pnpm-lock.yaml
+**/Gemfile.lock
+
+# Cache e compilação
+**/.cache/
+**/.gradle/
+**/.next/
+**/.nuxt/
+**/.turbo/
+**/.output/
+**/.vercel/
+**/.netlify/
+
+# EditorConfig
+**/.editorconfig

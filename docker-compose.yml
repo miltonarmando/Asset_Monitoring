@@ -1,0 +1,58 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./:/app
+    env_file: .env
+    environment:
+      - POSTGRES_SERVER=db:5432
+      - POSTGRES_USER=devops
+      - POSTGRES_PASSWORD=devops
+      - POSTGRES_DB=network_monitoring
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - SNMP_COMMUNITY=public
+    depends_on:
+      - db
+      - redis
+    working_dir: /app
+    command: >
+      bash -c "
+        alembic upgrade head && \
+        cd src && \
+        uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+      "
+
+  db:
+    image: postgres:13
+    environment:
+      - POSTGRES_USER=devops
+      - POSTGRES_PASSWORD=devops
+      - POSTGRES_DB=network_monitoring
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - "5433:5432"
+
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:
+  redis_data:
