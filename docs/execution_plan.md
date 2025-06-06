@@ -1,5 +1,35 @@
 # Network Switch Monitoring - Execution Plan
 
+## Progresso das Fases (Checklist)
+
+### Fase 1: Core System
+- [x] Docker Compose com FastAPI, PostgreSQL, Redis
+- [ ] SNMP Collector para métricas básicas
+- [x] Modelagem de dados
+- [x] API CRUD de dispositivos
+- [ ] Autenticação JWT *(não necessário neste projeto; removido por decisão de escopo)*
+
+### Fase 2: Monitoramento em Tempo Real
+- [ ] Sistema de alertas configurável
+- [ ] Frontend com dashboard e topologia
+- [ ] Gráficos de séries temporais
+- [ ] Dashboard de status agregado
+- [ ] **Coleta de métricas avançadas (expansão além do básico: Power, Security, Storage, etc.)**
+
+### Fase 3: Gestão Avançada
+- [ ] Asset Manager (inventário, ciclo de vida, dependências)
+- [ ] Config Manager (backup automático, diffs, compliance)
+- [ ] Relatórios (templates, agendamento, exportação)
+- [ ] **Expansão do coletor SNMP para novos OIDs e sensores avançados**
+
+### Fase 4: Otimização e Escala
+- [ ] Testes de carga (Locust, simulação em escala)
+- [ ] Otimizações (bulk inserts, pooling, cache Redis)
+- [ ] Segurança avançada (rotação de credenciais, auditoria, scanning)
+- [ ] Entrega final (uptime 99.9% em 72h)
+
+---
+
 ## Phase 1: Core System (Weeks 1-4)
 ### Objective: MVP for Data Collection and Storage
 ```mermaid
