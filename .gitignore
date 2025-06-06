@@ -128,8 +128,6 @@ test_create_device.json
 **/*.jks
 **/*.keystore
 
-# === Universal .gitignore ===
-
 # Sistemas Operacionais
 **/.DS_Store
 **/Thumbs.db

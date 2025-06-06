@@ -17,6 +17,7 @@ from .api.api_v1.api import api_router
 from .core.redis import init_redis
 from .core.config import settings
 from .tasks.collector import SNMPCollector
+from .tasks.alert_evaluator import AlertEvaluator
 
 # Configure logging
 logging.basicConfig(
@@ -48,6 +49,11 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
     collector = SNMPCollector()
     asyncio.create_task(collector.start(interval=300))  # 5-minute interval
     logger.info("Started SNMP collector")
+
+    # Start AlertEvaluator
+    alert_evaluator = AlertEvaluator(interval=60)  # check every 60 seconds
+    asyncio.create_task(alert_evaluator.start())
+    logger.info("Started AlertEvaluator")
     
     yield  # The application runs here
     
@@ -64,6 +70,31 @@ app = FastAPI(
     redoc_url="/redoc",
     openapi_url="/api/v1/openapi.json"
 )
+
+# CORS: permitir frontend local e outros ambientes
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"]
+)
+
+# Trusted hosts middleware
+app.add_middleware(
+    TrustedHostMiddleware,
+    allowed_hosts=os.getenv("ALLOWED_HOSTS", "*").split(",")
+)
+
+# Include API router
+app.include_router(api_router, prefix="/api/v1")
+
+# Create static files directory if it doesn't exist
+static_dir = os.path.join(os.path.dirname(__file__), "static")
+os.makedirs(static_dir, exist_ok=True)
+
+# Mount static files
+app.mount("/static", StaticFiles(directory=static_dir), name="static")
 
 # Add global exception handler
 @app.exception_handler(Exception)

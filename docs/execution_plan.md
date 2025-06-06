@@ -4,14 +4,14 @@
 
 ### Fase 1: Core System
 - [x] Docker Compose com FastAPI, PostgreSQL, Redis
-- [ ] SNMP Collector para métricas básicas
+- [x] SNMP Collector para métricas básicas
 - [x] Modelagem de dados
 - [x] API CRUD de dispositivos
 - [ ] Autenticação JWT *(não necessário neste projeto; removido por decisão de escopo)*
 
 ### Fase 2: Monitoramento em Tempo Real
-- [ ] Sistema de alertas configurável
-- [ ] Frontend com dashboard e topologia
+- [x] Sistema de alertas configurável *(backend funcional, incluindo feed em tempo real via WebSocket)*
+- [ ] Frontend com dashboard e topologia *(próximo passo)*
 - [ ] Gráficos de séries temporais
 - [ ] Dashboard de status agregado
 - [ ] **Coleta de métricas avançadas (expansão além do básico: Power, Security, Storage, etc.)**
