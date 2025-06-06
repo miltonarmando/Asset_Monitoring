@@ -23,6 +23,54 @@
 
 # HashiCorp / Terraform / Vault
 **/.terraform/
+
+# ========================
+# Python
+# ========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos de ambiente e segredos
+.env
+.env.*
+*.env
+*.secret
+
+# Docker
+*.pid
+*.log
+*.db
+*.sqlite3
+
+# Alembic
+alembic/versions/
+
+# Testes e artefatos temporários
+*.coverage
+htmlcov/
+.coverage.*
+.cache/
+*.log
+test_api.sh
+test_create_device.json
 **/terraform.tfstate
 **/terraform.tfstate.*
 **/*.tfvars
